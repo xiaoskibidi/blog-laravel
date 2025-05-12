@@ -81,10 +81,10 @@
         x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95">
         <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <x-nav-link-mobile href="/" :active="request()->is('/')">Home</x-nav-link-mobile>
-            <x-nav-link-mobile href="/about" :active="request()->is('about')">About</x-nav-link-mobile>
-            <x-nav-link-mobile href="/blog" :active="request()->is('blog')">Blog</x-nav-link-mobile>
-            <x-nav-link-mobile href="/contact" :active="request()->is('contact')">Contact</x-nav-link-mobile>
+            <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
+            <x-nav-link href="/about" :active="request()->is('about')">About</x-nav-link>
+            <x-nav-link href="/blog" :active="request()->is('blog')">Blog</x-nav-link>
+            <x-nav-link href="/contact" :active="request()->is('contact')">Contact</x-nav-link>
 
         </div>
         <div class="border-t border-gray-700 pt-4 pb-3">

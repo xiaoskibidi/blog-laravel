@@ -1,8 +1,13 @@
 <?php
 
-use Illuminate\Support\Arr;
+
+
+
 
 use Illuminate\Support\Facades\Route;
+
+use App\Models\Post;
+use App\Models\User;
 
 Route::get('/', function () {
     return view('home', ['title' => 'Home Page']);
@@ -14,49 +19,17 @@ Route::get('/about', function () {
 Route::get('/posts', function () {
     return view('posts', [
         'title' => 'Blog',
-        'posts' => [
-            [
-                'id' => 1,
-                'slug' => 'artikel-1',
-                'title' => 'artikel 1',
-                'author' => 'manuk ea',
-                'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta tenetur veniam, tempora numquam quibusdam minima illo error recusandae aliquam vero quam quia voluptatem ducimus saepe perspiciatis dicta dolorem dolor sunt!',
-            ],
-            [
-                'id' => 2,
-                'slug' => 'artikel-2',
-                'title' => 'artikel 2',
-                'author' => 'palpal ea',
-                'body' => 'Lorem ipsum dolor sit amet consectetur adiplo error recusandae aliquam vero quam quia voluptatem ducimus saepe perspiciatis dicta dolorem dolor sunt!',
-            ],
-        ]
+        'posts' => Post::all()
     ]);
 });
 
-Route::get('/post/{slug}', function ($slug) {
-    $posts = [
-        [
-            'id' => 1,
-            'slug' => 'artikel-1',
-            'title' => 'artikel 1',
-            'author' => 'manuk ea',
-            'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta tenetur veniam, tempora numquam quibusdam minima illo error recusandae aliquam vero quam quia voluptatem ducimus saepe perspiciatis dicta dolorem dolor sunt!',
-        ],
-        [
-            'id' => 2,
-            'slug' => 'artikel-2',
-            'title' => 'artikel 2',
-            'author' => 'palpal ea',
-            'body' => 'Lorem ipsum dolor sit amet consectetur adiplo error recusandae aliquam vero quam quia voluptatem ducimus saepe perspiciatis dicta dolorem dolor sunt!',
-        ],
-    ];
+Route::get('/post/{post:slug}', function (Post $post) {
 
-    $post = Arr::first($posts, function ($post) use ($slug) {
-        return $post['slug'] == $slug;
-    });
-
-    // dd($post['slug']);
     return view('post', ['title' => 'Single Post', 'post' => $post]);
+});
+
+Route::get('/posts/authors/{user}', function (User $user) {
+    return view('posts', ['title' => 'Article by' . $user->name, 'posts' => $user->posts]);
 });
 
 

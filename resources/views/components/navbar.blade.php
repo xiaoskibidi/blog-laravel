@@ -4,7 +4,7 @@
             <div class="flex items-center">
                 <div class="shrink-0">
                     <img class="size-8"
-                        src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
+                        src="#"
                         alt="Your Company">
                 </div>
                 <div class="hidden md:block">
@@ -13,7 +13,7 @@
                         <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
                         <x-nav-link href="/about" :active="request()->is('about')">About</x-nav-link>
                         <x-nav-link href="/posts" :active="request()->is('posts')">Blog</x-nav-link>
-                        <x-nav-link href="/contac t" :active="request()->is('contact')">Contact</x-nav-link>
+                        <x-nav-link href="/contact" :active="request()->is('contact')">Contact</x-nav-link>
                     </div>
                 </div>
             </div>
@@ -30,7 +30,7 @@
                                 <span class="absolute -inset-1.5"></span>
                                 <span class="sr-only">Open user menu</span>
                                 <img class="size-8 rounded-full"
-                                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                    src="#"
                                     alt="">
                             </button>
                         </div>
@@ -91,7 +91,7 @@
             <div class="flex items-center px-5">
                 <div class="shrink-0">
                     <img class="size-10 rounded-full"
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                        src="#"
                         alt="">
                 </div>
                 <div class="ml-3">
